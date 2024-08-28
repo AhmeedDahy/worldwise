@@ -57,7 +57,7 @@ function CitiesProvider({ children }) {
     async function fetchData() {
       dispatch({ type: "loading" });
       try {
-        const res = await fetch("http://localhost:9000");
+        const res = await fetch("http://localhost:9000/cities");
         const data = await res.json();
         dispatch({ type: "cities/loaded", payLoad: data });
       } catch {
