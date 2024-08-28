@@ -57,7 +57,7 @@ function CitiesProvider({ children }) {
     async function fetchData() {
       dispatch({ type: "loading" });
       try {
-        const res = await fetch("http://localhost:9000/cities");
+        const res = await fetch("https://my-json-server.typicode.com/AhmeedDahy/worldwise/cities");
         const data = await res.json();
         dispatch({ type: "cities/loaded", payLoad: data });
       } catch {
@@ -73,7 +73,7 @@ function CitiesProvider({ children }) {
 
       dispatch({ type: "loading" });
       try {
-        const res = await fetch(`http://localhost:9000/cities/${id}`);
+        const res = await fetch(`https://my-json-server.typicode.com/AhmeedDahy/worldwise/cities/${id}`);
         const data = await res.json();
         dispatch({ type: "city/loaded", payLoad: data });
       } catch {
@@ -86,7 +86,7 @@ function CitiesProvider({ children }) {
   async function createCity(newCity) {
     dispatch({ type: "loading" });
     try {
-      const res = await fetch(`http://localhost:9000/cities`, {
+      const res = await fetch(`https://my-json-server.typicode.com/AhmeedDahy/worldwise/cities`, {
         method: "POST",
         body: JSON.stringify(newCity),
         headers: {
@@ -106,7 +106,7 @@ function CitiesProvider({ children }) {
   async function deleteCity(id) {
     dispatch({ type: "loading" });
     try {
-      await fetch(`http://localhost:9000/cities/${id}`, {
+      await fetch(`https://my-json-server.typicode.com/AhmeedDahy/worldwise/cities/${id}`, {
         method: "DELETE",
       });
       dispatch({
